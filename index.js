@@ -16,7 +16,7 @@ let students = []
 const app = express()
 
 
-app.use(rollbar.errorHandler)
+app.use(rollbar.errorHandler())
 
 
 app.get('/', (req, res) => {
