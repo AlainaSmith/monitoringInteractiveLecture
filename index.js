@@ -14,9 +14,8 @@ let students = []
 
 
 const app = express()
+app.use(express.json())
 
-
-app.use(rollbar.errorHandler())
 
 
 app.get('/', (req, res) => {
@@ -36,6 +35,9 @@ app.post('/api/student', () => (req, res) => {
 
 
 const port = process.env.PORT || 4545
+
+
+app.use(rollbar.errorHandler())
 
 app.listen(port, () => console.log(`Take us to warp ${port}!`))
 
